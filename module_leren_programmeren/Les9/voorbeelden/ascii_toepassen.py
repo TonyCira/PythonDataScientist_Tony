@@ -48,7 +48,7 @@ for teken in versleuteld:
 print(ontcijferd)                            # dit is een tekst omgezet naar ascii
 
 
-
+# binair is een string en kan niet omgezet worden naar getal
 
 
 

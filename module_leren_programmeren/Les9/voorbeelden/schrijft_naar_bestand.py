@@ -2,7 +2,8 @@ bestand = open("tekst.txt", "a") # bestaat het bestand niet dan maakt het systee
 
 # w = overschrijven
 # a = toevoegen
-#
+# r = lezen
+# x = aanmaken
 
 bestand.write("Dit is een tekst" + "\n")
 
