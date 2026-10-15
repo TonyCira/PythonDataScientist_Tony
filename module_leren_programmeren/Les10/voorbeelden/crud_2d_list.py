@@ -5,7 +5,9 @@ studenten = [
     ["Anke", "1a", "As"],
     ["Ben", "1a", "Genk"],
     ["Fien", "2a", "Genk"],
-    ["Cindy", "2b", "Hasselt"]
+    ["Cindy", "2b", "Hasselt"],
+    ["Billy", "2b", "Hasselt"],
+    ["Xindy", "1c", "Hasselt"]
  ]
 
 
@@ -96,3 +98,13 @@ def verander_woonplaats_van_student():
     else:
         print("ongeldige student nummer")
 
+# een lijst heeft als default behaviour het sorteren op level 0 in de lijst,
+# maar wil je sorteren op een andere level dan moet een functie toevoegen
+
+def sorteer_studenten_op_naam():
+    # mijn studenten en mijn sorteer sleutel, teruggeven als resultaat
+    res = sorted(studenten, key=lambda x: x[1])
+    print(tabulate(res, headers=headers))
+
+
+sorteer_studenten_op_naam()
