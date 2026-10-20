@@ -12,7 +12,7 @@ studenten = [
 
 
 def toon_alle_studenten():
-    data = tabulate(studenten, headers=headers)
+    data = tabulate(studenten, headers=headers, showindex=True)
     print(data)
 
 def toon_alle_namen():
@@ -107,4 +107,4 @@ def sorteer_studenten_op_naam():
     print(tabulate(res, headers=headers))
 
 
-sorteer_studenten_op_naam()
+
