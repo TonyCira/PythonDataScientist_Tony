@@ -41,7 +41,7 @@ def toon_iedereen_met_instrument():
     instrument = input("Voor welke instrument zoek je muzikanten? ").capitalize()
 
     for muzikant in data:
-        if instrument == data[4]:
+        if instrument == muzikant[4]:
             res.append(muzikant)
     print(tabulate(res, headers=headers))
 
@@ -51,7 +51,7 @@ def toon_iedereen_met_genre():
     genre = input("Voor welke genre zoek je muzikanten? ").capitalize()
 
     for muzikant in data:
-        if genre == data[3]:
+        if genre == muzikant[3]:
             res.append(muzikant)
     print(tabulate(res, headers=headers))
 
@@ -63,15 +63,15 @@ def toon_iedereen_onder_vraagprijs():
     print(f"{len(res)} muzikanten onder de {vraagprijs} euro per uur")
 
 def voeg_muzikant_toe():
-    voornaam = input("Geef de voornaam van de muzikant: ").lower()
-    achternaam = input("Geef de achternaam van de muzikant: ")
-    geslacht = input("Geef het geslacht van de muzikant: ").title()
-    genre = input("Geef het genre van de muzikant: ").upper()
+    voornaam = input("Geef de voornaam van de muzikant: ").capitalize()
+    achternaam = input("Geef de achternaam van de muzikant: ").title()
+    geslacht = input("Geef het geslacht van de muzikant: ").upper()
+    genre = input("Geef het genre van de muzikant: ").capitalize()
     instrument = input("Geef het instrument: ").capitalize()
-    uurtarief = input("Geef het uurtarief: ")
+    uurtarief = int(input("Geef het uurtarief: "))
 
-    leerling = [voornaam, achternaam, geslacht, genre, instrument, uurtarief]
-    data.append(leerling)
+    muzikant = [voornaam, achternaam, geslacht, genre, instrument, uurtarief]
+    data.append(muzikant)
 
 def verwijder_muzikant():
     toon_alle_muzikanten()
@@ -147,8 +147,6 @@ functies = {
     "9": pas_genre_of_instrument_aan,
     "10": pas_het_uurtarief_aan,
     "11": sorteer_op_uurtarief_aflopend,
-    "0": update_data
-
 }
 
 # =====================
@@ -166,7 +164,7 @@ while True:
     print("3  - Toon alle unieke instrumenten")
     print("4  - Toon iedereen met instrument")
     print("5  - Toon iedereen met genre")
-    print("6  - Toon iedereen onder de vraagrpijs")
+    print("6  - Toon iedereen onder de vraagpijs")
     print("7  - voeg muzikant toe")
     print("8  - verwijder een muzikant")
     print("9  - pas genre of instrument aan")
