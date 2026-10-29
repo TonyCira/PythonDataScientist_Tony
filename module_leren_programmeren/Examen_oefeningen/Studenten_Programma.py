@@ -29,15 +29,36 @@ def return_namen(studenten):
 
 def return_klassen(studenten):
     klassen = []
-    for klas in klassen:
-        klassen.append(klas[1])
+    for student in studenten:
+        klassen.append(student[1])
     return klassen
 
 def return_woonplaats(studenten):
     woonplaatsen = []
-    for woonplaats in woonplaatsen:
-        woonplaatsen.append(woonplaats[1])
+    for student in studenten:
+        woonplaatsen.append(student[2])
     return woonplaatsen
+
+def toon_namen(studenten):
+    namen = sorted(set([student[0] for student in studenten]))
+    print("Namen van de studenten")
+    print("-----------------------------")
+    for nummer, naam in enumerate(namen):
+        print(nummer, naam)
+
+def toon_klassen(studenten):
+    klassen = sorted(set([student[1] for student in studenten]))
+    print("klassen van de studenten")
+    print("-----------------------------")
+    for nummer, klas in enumerate(klassen):
+        print(nummer, klas)
+
+def toon_woonplaatsen(studenten):
+    woonplaatsen = sorted(set([student[2] for student in studenten]))
+    print("Woonplaatsen van de studenten")
+    print("-----------------------------")
+    for nummer, woonplaats in enumerate(woonplaatsen):
+        print(nummer, woonplaats)
 
 def zoek_student(headers, studenten):
     naam = input("welke naam zoek je: ").capitalize()
@@ -79,6 +100,7 @@ def uniek_woonplaats(studenten):
     return woonplaatsen
 
 
+
 def toon_menu():
     print("1: toon alle studenten")
     print("2: zoek een student")
@@ -86,6 +108,9 @@ def toon_menu():
     print("4: verander de woonplaats")
     print("5: verwijder een student")
     print("6: toon de unieke woonplaatsen")
+    print("7: toon de namen")
+    print("8: toon de klassen")
+    print("9: toon de woonplaatsen")
     print("stop: opslaan en stoppen")
 
 ##### hoofdprogramma ########
@@ -107,6 +132,12 @@ while keuze != "stop":
         verwijder_student(headers, studenten)
     elif keuze == "6":
         print(sorted(uniek_woonplaats(studenten)))
+    elif keuze == "7":
+        toon_namen(studenten)
+    elif keuze == "8":
+        toon_klassen(studenten)
+    elif keuze == "9":
+        toon_woonplaatsen(studenten)
     else:
         print("verkeerde invoer")
 

@@ -140,7 +140,6 @@ def sorteer_op_loon_aflopend():
 def update_data():
     with open("personeel.csv", "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile)
-
         writer.writerow(headers)
         writer.writerows(data)
 
